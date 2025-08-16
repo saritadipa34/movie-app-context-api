@@ -1,8 +1,9 @@
+import MovieApp from "./MovieApp";
 
 const App=()=>{
   return(
-    <div className="text-blue-900">
-      app
+    <div>
+      <MovieApp />
       </div>
   )
 }
