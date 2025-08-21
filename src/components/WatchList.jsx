@@ -1,9 +1,11 @@
-import Movie from "./Movie";
 
-const MovieList=()=>{
+import Movie from './Movie';
 
+const WatchList=()=>{
     return(
-        <div className="items-center justify-center px-[100px] py-10 flex flex-wrap gap-5">
+        <div>
+            
+ <div className="items-center justify-center px-[100px] py-10 flex flex-wrap gap-5">
             <Movie />
             <Movie />
             <Movie />
@@ -14,6 +16,8 @@ const MovieList=()=>{
             <Movie />
             
         </div>
+
+        </div>
     )
 }
-export default MovieList;
+export default WatchList;
