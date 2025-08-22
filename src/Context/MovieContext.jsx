@@ -1,26 +1,24 @@
-import { createContext, useEffect } from "react";
+import { createContext,useState } from "react";
 
 export const MovieContext=createContext();
 
 export const MovieProvider=({children})=>{
-
-    const getMovieData=async()=>{
+    const[movieData,setMovieData]=useState([]);
+const [search,setSearch]=useState("");
+    const getMovieData=async(search)=>{
         try{
         const apiKey=import.meta.env.VITE_API_KEY;
-        const response=await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=Inception`);
+        const response=await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${search}`);
         const data=await response.json();
-        console.log(data);
+        setMovieData(data.Search);
+        console.log(data.Search);
     } catch (error){
         console.log(error.message);
     }
     }
 
-    useEffect(()=>{
-        getMovieData();
-    },[]);
-
     return(
-        <MovieContext.Provider value={{}} >
+        <MovieContext.Provider value={{search,setSearch,getMovieData,movieData}} >
 {children}
         </MovieContext.Provider>
     )
