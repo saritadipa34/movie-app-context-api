@@ -1,4 +1,4 @@
-import MovieApp from "./MovieApp";
+import MovieApp from "./components/MovieApp";
 
 const App=()=>{
   return(

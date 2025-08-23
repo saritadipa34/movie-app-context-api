@@ -7,9 +7,9 @@ const SearchMovie=({film})=>{
 <div className="h-22 w-full flex gap-5 ">
     <img className="h-full w-2/7"
      src={film?.Poster} alt="movie" />
-     <div className='flex flex-col gap-2 '>
-    <h1>{film?.Title}</h1>
-    <h1>{film?.Year}</h1>
+<div className='flex flex-col gap-3'>
+    <h1 className="text-sm">{film?.Title}</h1>
+    <h1 className='text-sm'>{film?.Year}</h1>
     <div className='flex w-70 justify-between'>
         <Button text={"ADD TO WATCHLIST"} className={"text-[10px] px-2 "}/>
         <Button text={"ADD TO WATCHED"} className={"text-[10px] px-2 "}/>
